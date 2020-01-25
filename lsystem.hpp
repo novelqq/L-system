@@ -13,13 +13,12 @@ class Rule{
 
 class Lsystem{
     public:
-        Lsystem(std::string axiom, std::vector<Rule>& ruleset);
+        Lsystem(std::string axiom, std::vector<Rule> ruleset);
         void generate();
         std::string getSentence();
 
     private:
-        std::vector<Rule>& ruleset;
-        int rslength;
+        std::vector<Rule> ruleset;
         std::string current;
         
 

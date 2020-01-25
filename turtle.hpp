@@ -3,16 +3,18 @@
 
 class Turtle{
     public:
-        Turtle();
+        Turtle(GLfloat len, GLfloat theta);
         ~Turtle();
         void render();
-        int getx();
-        int gety();
+        GLfloat getx();
+        GLfloat gety();
         void setSentence(std::string s);
-    private:
+        void changeLen(GLfloat diff);
         void move(GLfloat ds);
+    private:
         void turn(GLfloat theta);
     private:  
         GLfloat x, y, mx, my;
         std::string sentence;
+        GLfloat len, theta;
 };
