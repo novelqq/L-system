@@ -11,13 +11,15 @@ void Lsystem::generate(){
         char c = current[i];
         //std::cout << "char c: " << c << std::endl;
         //std::cout << "ruleset[0]" << ruleset[0].predecessor << std::endl;
+        std::string replace(1, c); 
         for(int k = 0; k < ruleset.size(); k++){
             //std::cout << "ruleset[" << k << "] pred: " <<ruleset[k].predecessor << std::endl;
             if(c == ruleset[k].predecessor){
-                next.append(ruleset[k].successor);
+                replace = ruleset[k].successor;
                 break;
             }
         }
+        next.append(replace);
     }
     current = next;
 }

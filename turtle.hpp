@@ -1,9 +1,10 @@
 #include <GL/freeglut.h>
 #include <string>
+#include <vector>
 
 class Turtle{
     public:
-        Turtle(GLfloat len, GLfloat theta);
+        Turtle(int width, int height, GLfloat len, GLfloat theta);
         ~Turtle();
         void render();
         GLfloat getx();
@@ -14,7 +15,7 @@ class Turtle{
     private:
         void turn(GLfloat theta);
     private:  
-        GLfloat x, y, mx, my;
+        std::vector<GLfloat> x, y, mx, my;
         std::string sentence;
         GLfloat len, theta;
 };
